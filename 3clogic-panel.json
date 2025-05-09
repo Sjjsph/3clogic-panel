@@ -8,7 +8,7 @@
     "/release-panel": {
       "get": {
         "summary": "3CLogic Release Panel",
-        "description": "<h1 style=\"background-color: #0A1F44; color: #FFFFFF; padding: 20px; border-radius: 8px; text-align: center;\">🚀 New Release: [Product Name] - [Version Number]</h1>",
+        "description": "# 🚀 **New Release: [Product Name] - [Version Number]**\n\n**Features:**\n\n- Feature 1: AI-driven customer engagement insights.\n- Feature 2: Enhanced integration with AWS for better scalability.\n- Feature 3: Improved user experience and interface design.\n\n**Fixes & Improvements:**\n\n- Performance improvements for faster data processing.\n- Fixed connectivity issues with third-party integrations.\n- Enhanced security protocols for safer data management.\n\n[📥 Download Now](https://your-download-link.com) | [📚 Read Full Release Notes](https://your-release-notes-link.com)",
         "responses": {
           "200": {
             "description": "Success"
