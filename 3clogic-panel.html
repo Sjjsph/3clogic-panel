@@ -4,7 +4,7 @@
     <title>3CLogic Release Panel</title>
     <style>
         body {
-            font-family: Arial, sans-serif;
+            font-family: "Arial", sans-serif;
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
@@ -12,51 +12,74 @@
         .panel {
             background-color: #0A1F44;
             color: #FFFFFF;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 30px;
+            border-radius: 12px;
             text-align: center;
-            margin-bottom: 20px;
+            margin-bottom: 30px;
+            box-shadow: 0 8px 16px rgba(0,0,0,0.2);
+            font-weight: 600;
+            font-size: 32px;
+            letter-spacing: 1px;
         }
         .content {
             background-color: #FFFFFF;
-            padding: 20px;
-            border-radius: 8px;
+            padding: 30px;
+            border-radius: 12px;
             max-width: 800px;
             margin: 0 auto;
             text-align: left;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.1);
         }
         .content h2 {
-            color: #1A73E8;
+            color: #0056b3;
+            font-weight: 700;
+            font-size: 28px;
+            margin-bottom: 20px;
         }
-        .content a.button {
-            background-color: #1A73E8;
-            color: #FFFFFF;
-            padding: 10px 20px;
-            border-radius: 5px;
-            text-decoration: none;
-            font-weight: bold;
-            margin-right: 10px;
-        }
-        .content a.button.alt {
-            background-color: #FFB900;
+        .content h3 {
+            color: #333333;
+            font-weight: 600;
+            font-size: 22px;
+            margin-bottom: 15px;
         }
         .content ul {
             list-style-type: disc;
             margin-left: 20px;
+            color: #555555;
+            font-size: 18px;
+            line-height: 1.6;
+        }
+        .footer {
+            background-color: #0A1F44;
+            color: #FFFFFF;
+            padding: 20px;
+            border-radius: 0 0 12px 12px;
+            text-align: center;
+            margin-top: 30px;
+            font-size: 16px;
+            letter-spacing: 0.5px;
+        }
+        .footer a {
+            color: #FFB900;
+            text-decoration: none;
+            font-weight: 600;
+        }
+        .footer a:hover {
+            color: #FFFFFF;
         }
     </style>
 </head>
 <body>
     <div class="panel">
-        <h1>3CLogic Release Panel</h1>
+        3CLogic Release Panel
     </div>
     <div class="content">
         <h2>🚀 New Release: [Product Name] - [Version Number]</h2>
         <h3>Features:</h3>
         <ul>
-            <li>Feature 1: AI-driven customer engagement insights.</li>
-            <li>Feature 2: Enhanced integration with AWS for better scalability.</li>
-            <li>Feature 3: Improved user experience and interface design.</li>
+            <li>AI-driven customer engagement insights.</li>
+            <li>Enhanced integration with AWS for better scalability.</li>
+            <li>Improved user experience and interface design.</li>
         </ul>
         <h3>Fixes & Improvements:</h3>
         <ul>
@@ -64,8 +87,10 @@
             <li>Fixed connectivity issues with third-party integrations.</li>
             <li>Enhanced security protocols for safer data management.</li>
         </ul>
-        <a href="https://your-download-link.com" class="button">📥 Download Now</a>
-        <a href="https://your-release-notes-link.com" class="button alt">📚 Read Full Release Notes</a>
+    </div>
+    <div class="footer">
+        Thank you for choosing HawkAI.<br>
+        For support, contact us at <a href="mailto:sjoseph@3clogic.com">sjoseph@3clogic.com</a>.
     </div>
 </body>
 </html>
