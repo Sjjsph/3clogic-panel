@@ -70,27 +70,50 @@
     </style>
 </head>
 <body>
-    <div class="panel">
-        3CLogic Release Panel
-    </div>
+    <div class="panel" id="panel-title">Loading...</div>
     <div class="content">
-        <h2>🚀 New Release: [Product Name] - [Version Number]</h2>
+        <h2 id="release-title">Loading...</h2>
         <h3>Features:</h3>
-        <ul>
-            <li>AI-driven customer engagement insights.</li>
-            <li>Enhanced integration with AWS for better scalability.</li>
-            <li>Improved user experience and interface design.</li>
-        </ul>
+        <ul id="features-list"></ul>
         <h3>Fixes & Improvements:</h3>
-        <ul>
-            <li>Performance improvements for faster data processing.</li>
-            <li>Fixed connectivity issues with third-party integrations.</li>
-            <li>Enhanced security protocols for safer data management.</li>
-        </ul>
+        <ul id="fixes-list"></ul>
     </div>
-    <div class="footer">
-        Thank you for choosing HawkAI.<br>
-        For support, contact us at <a href="mailto:sjoseph@3clogic.com">sjoseph@3clogic.com</a>.
-    </div>
+    <div class="footer" id="footer">Loading...</div>
+
+    <script>
+        // Fetch JSON data based on the current month
+        const currentMonth = new Date().toLocaleString('default', { month: 'long', year: 'numeric' });
+        const jsonFile = `releases/${currentMonth}.json`;
+
+        fetch(jsonFile)
+            .then(response => response.json())
+            .then(data => {
+                document.getElementById("panel-title").innerText = "3CLogic Release Panel";
+                document.getElementById("release-title").innerText = data.title;
+                
+                // Add features
+                const featuresList = document.getElementById("features-list");
+                data.features.forEach(feature => {
+                    const li = document.createElement("li");
+                    li.textContent = feature;
+                    featuresList.appendChild(li);
+                });
+                
+                // Add fixes
+                const fixesList = document.getElementById("fixes-list");
+                data.fixes.forEach(fix => {
+                    const li = document.createElement("li");
+                    li.textContent = fix;
+                    fixesList.appendChild(li);
+                });
+
+                // Add footer text
+                document.getElementById("footer").innerHTML = data.footer;
+            })
+            .catch(error => {
+                console.error("Error loading release data:", error);
+                document.getElementById("panel-title").innerText = "Error Loading Release Data";
+            });
+    </script>
 </body>
 </html>
