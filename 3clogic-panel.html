@@ -8,20 +8,18 @@
             margin: 0;
             padding: 0;
             background-color: #f4f4f4;
-            overflow-x: hidden;
         }
         .panel {
-            background-color: #0A1F44;
+            background-color: #002855;
             color: #FFFFFF;
             padding: 30px;
             border-radius: 12px;
             text-align: center;
             margin-bottom: 30px;
             box-shadow: 0 8px 16px rgba(0,0,0,0.2);
-            font-weight: 600;
+            font-weight: 700;
             font-size: 32px;
             letter-spacing: 1px;
-            width: 100%;
         }
         .content {
             background-color: #FFFFFF;
@@ -31,8 +29,6 @@
             margin: 0 auto;
             text-align: left;
             box-shadow: 0 4px 12px rgba(0,0,0,0.1);
-            overflow-wrap: break-word;
-            width: 100%;
         }
         .content h2 {
             color: #0056b3;
@@ -41,20 +37,20 @@
             margin-bottom: 20px;
         }
         .content h3 {
-            color: #333333;
-            font-weight: 600;
-            font-size: 22px;
+            color: #0056b3;
+            font-weight: 700;
+            font-size: 24px;
             margin-bottom: 15px;
         }
         .content ul {
             list-style-type: disc;
             margin-left: 20px;
-            color: #555555;
+            color: #333333;
             font-size: 18px;
             line-height: 1.6;
         }
         .footer {
-            background-color: #0A1F44;
+            background-color: #002855;
             color: #FFFFFF;
             padding: 20px;
             border-radius: 0 0 12px 12px;
@@ -62,7 +58,6 @@
             margin-top: 30px;
             font-size: 16px;
             letter-spacing: 0.5px;
-            width: 100%;
         }
         .footer a {
             color: #FFB900;
@@ -76,68 +71,42 @@
 </head>
 <body>
     <div class="panel" id="panel-title">Loading...</div>
-    <div class="content" id="release-content">
+    <div class="content">
         <h2 id="release-title">Loading...</h2>
-        <h3>Features:</h3>
+        <h3>What's New?</h3>
         <ul id="features-list"></ul>
-        <h3>Fixes & Improvements:</h3>
+        <h3>Fixes & Improvements</h3>
         <ul id="fixes-list"></ul>
     </div>
     <div class="footer" id="footer">Loading...</div>
 
     <script>
-        // Function to adjust iframe height
-        function resizeIframe() {
-            setTimeout(() => {
-                const height = document.body.scrollHeight;
-                window.parent.postMessage({
-                    type: 'resize',
-                    height: height
-                }, '*');
-            }, 100);
-        }
-
-        // Fetch JSON data based on the current month
         const currentMonth = new Date().toLocaleString('default', { month: 'long', year: 'numeric' });
         const jsonFile = `releases/${currentMonth}.json`;
 
         fetch(jsonFile)
             .then(response => response.json())
             .then(data => {
-                // Update title
-                document.getElementById("panel-title").innerText = "3CLogic Release Panel";
+                document.getElementById("panel-title").innerText = "🚀 New Release: " + data.title;
                 document.getElementById("release-title").innerText = data.title;
-                
-                // Add features
                 const featuresList = document.getElementById("features-list");
                 data.features.forEach(feature => {
                     const li = document.createElement("li");
                     li.textContent = feature;
                     featuresList.appendChild(li);
                 });
-                
-                // Add fixes
                 const fixesList = document.getElementById("fixes-list");
                 data.fixes.forEach(fix => {
                     const li = document.createElement("li");
                     li.textContent = fix;
                     fixesList.appendChild(li);
                 });
-
-                // Add footer text
                 document.getElementById("footer").innerHTML = data.footer;
-
-                // Adjust iframe height
-                resizeIframe();
             })
             .catch(error => {
                 console.error("Error loading release data:", error);
                 document.getElementById("panel-title").innerText = "Error Loading Release Data";
-                resizeIframe();
             });
-
-        // Adjust iframe on window resize
-        window.onresize = resizeIframe;
     </script>
 </body>
 </html>
