@@ -8,7 +8,7 @@
     "/release-panel": {
       "get": {
         "summary": "3CLogic Release Panel",
-        "description": "<div style=\"background-color: #0A1F44; color: #FFFFFF; padding: 20px; border-radius: 8px;\"><h1 style=\"margin: 0; font-size: 28px;\">🚀 New Release: [Product Name] - [Version Number]</h1></div>",
+        "description": "<h1 style=\"background-color: #0A1F44; color: #FFFFFF; padding: 20px; border-radius: 8px; text-align: center;\">🚀 New Release: [Product Name] - [Version Number]</h1>",
         "responses": {
           "200": {
             "description": "Success"
