@@ -1,0 +1,20 @@
+{
+  "swagger": "2.0",
+  "info": {
+    "title": "3CLogic Release Panel",
+    "version": "1.0"
+  },
+  "paths": {
+    "/release-panel": {
+      "get": {
+        "summary": "3CLogic Release Panel",
+        "description": "<div style=\"background-color: #0A1F44; color: #FFFFFF; padding: 20px; border-radius: 8px;\"><h1 style=\"margin: 0; font-size: 28px;\">🚀 New Release: [Product Name] - [Version Number]</h1></div>",
+        "responses": {
+          "200": {
+            "description": "Success"
+          }
+        }
+      }
+    }
+  }
+}
